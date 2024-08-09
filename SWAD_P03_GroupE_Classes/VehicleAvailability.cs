@@ -11,6 +11,10 @@ namespace SWAD_P03_GroupE_Classes
         public string AvailabilityID { get; set; }
         public List<AvailabilitySlot> AvailabilitySlots { get; set; }
 
+        public VehicleAvailability()
+        {
+        }
+
         // Constructor for VehicleAvailability class
         public VehicleAvailability(string availabilityID, List<AvailabilitySlot> availabilitySlots)
         {

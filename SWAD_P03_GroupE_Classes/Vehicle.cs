@@ -18,7 +18,8 @@ namespace SWAD_P03_GroupE_Classes
         public VehicleAvailability Availability { get; set; }
         public List<Photo> Photos { get; set; }
 
-    public Vehicle()
+
+        public Vehicle()
     {
         VehicleID = Guid.NewGuid().ToString(); // Global UID
         VehicleRegNo = string.Empty;

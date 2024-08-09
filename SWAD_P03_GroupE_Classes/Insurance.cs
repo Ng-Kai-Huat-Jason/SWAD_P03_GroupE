@@ -13,6 +13,8 @@ namespace SWAD_P03_GroupE_Classes
         public DateTime InsuranceStartDate { get; set; }
         public DateTime InsuranceEndDate { get; set; }
 
+        public Insurance() { }
+        
         // Constructor for Insurance class
         public Insurance(string insuranceID, string coverageDetails, DateTime insuranceStartDate, DateTime insuranceEndDate)
         {

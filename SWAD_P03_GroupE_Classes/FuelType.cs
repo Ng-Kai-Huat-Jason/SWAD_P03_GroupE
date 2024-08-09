@@ -6,13 +6,18 @@ namespace SWAD_P03_GroupE_Classes
     {
         public abstract void DisplayFuelTypeInformation();
         public abstract void CreateFuelType();
+
+        protected FuelType() { }
     }
+
 
     public class Gas : FuelType
     {
         public string PreferredPetrolKiosk { get; set; }
         public string PetrolType { get; set; }
         public float VehicleMaxFuelCapacity { get; set; }
+
+        public Gas () { }
 
         // Constructor
         public Gas(string preferredPetrolKiosk, string petrolType, float vehicleMaxFuelCapacity)
@@ -51,6 +56,8 @@ namespace SWAD_P03_GroupE_Classes
         public string VehicleCurrentType { get; set; }
         public float VehicleChargingRate { get; set; }
         public float VehicleMaxChargeCapacity { get; set; }
+        
+        public Electric() { }
 
         // Constructor
         public Electric(string preferredChargingStation, string vehicleCurrentType, float vehicleChargingRate, float vehicleMaxChargeCapacity)
@@ -97,6 +104,8 @@ namespace SWAD_P03_GroupE_Classes
         public string VehicleCurrentType { get; set; }
         public float VehicleChargingRate { get; set; }
         public float VehicleMaxChargeCapacity { get; set; }
+
+        public Hybrid() { }
 
         // Constructor
         public Hybrid(string preferredPetrolKiosk, string petrolType, float vehicleMaxFuelCapacity,
