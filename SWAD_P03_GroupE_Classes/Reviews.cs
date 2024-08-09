@@ -12,9 +12,7 @@ namespace SWAD_P03_GroupE_Classes
         int starInt { get; set; }
         string reviewDesc { get; set; }
 
-        public Reviews()
-        {
-        }
+        public Reviews(){}
 
         public Reviews(string ReviewID, int StarInt, string ReviewDesc)
         {

@@ -14,9 +14,7 @@ namespace SWAD_P03_GroupE_Classes
         public string inspectorName { get; set; }
         public string status { get; set; }
 
-        public InspectionReport()
-        {
-        }
+        public InspectionReport(){}
 
         public InspectionReport(string InspectionID, string ReportDetails, DateTime InspectionDateTime, string InspectorName, string Status)
         {

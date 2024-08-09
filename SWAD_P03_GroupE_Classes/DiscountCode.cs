@@ -12,9 +12,7 @@ public class DiscountCode
     public string DiscountType { get; set; }
     public float DiscountValue { get; set; } // Can be percentage or flat value based on DiscountType
 
-    public DiscountCode()
-    {
-    }
+    public DiscountCode(){}
 
     public DiscountCode(string disccode, string discountType, float discountValue)
     {
