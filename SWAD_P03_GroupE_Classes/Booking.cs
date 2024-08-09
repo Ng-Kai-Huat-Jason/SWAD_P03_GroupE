@@ -18,6 +18,7 @@ namespace SWAD_P03_GroupE_Classes
         public Location PickUpLocation { get; set; }
         public Location ReturnLocation { get; set; }
         public Vehicle Vehicle { get; set; }
+        public Reviews Reviews { get; set; }
         public Booking() {}
 
         // Constructor for Booking class
