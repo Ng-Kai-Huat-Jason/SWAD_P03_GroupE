@@ -21,7 +21,7 @@ namespace SWAD_P03_GroupE_Classes
         }
 
         // Constructor
-        public User(string userID, string fullName, string contactNumber, DateTime dateOfBirth,
+        protected User(string userID, string fullName, string contactNumber, DateTime dateOfBirth,
                     string address, string zipcode, string emailAddress, string password, DateTime dateJoin)
         {
             UserID = userID;
@@ -126,11 +126,6 @@ namespace SWAD_P03_GroupE_Classes
             : base(userID, fullName, contactNumber, dateOfBirth, address, zipcode, emailAddress, password, dateJoin)
         {
             Role = role;
-        }
-
-        public void VerifyRenter(Renter renter)
-        {
-            // Not necessary for my function
         }
 
         // Override the DisplayUserInfo method

@@ -66,15 +66,14 @@ namespace SWAD_P03_GroupE_Classes
         }
 
         // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
-        public bool CheckAvailability(List<VehicleAvailability> availabilites, DateTime startDateTime, DateTime endDateTime)
+        public static bool CheckAvailability(List<VehicleAvailability> availabilities, DateTime startDateTime, DateTime endDateTime)
         {
-
             if (!validateAvailabilitySlots(startDateTime, endDateTime))
             {
                 return false;
             }
 
-            foreach (var availability in availabilites)
+            foreach (var availability in availabilities)
             {
                 foreach (var slot in availability.AvailabilitySlots)
                 {
@@ -87,6 +86,7 @@ namespace SWAD_P03_GroupE_Classes
 
             return false;
         }
+
 
         // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
         public static bool validateAvailabilitySlots(DateTime startDateTime, DateTime endDateTime)

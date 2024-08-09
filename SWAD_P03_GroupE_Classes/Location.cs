@@ -34,6 +34,8 @@ namespace SWAD_P03_GroupE_Classes
             public string OperatingHrs { get; set; }
             public string ContactInfo { get; set; }
 
+            public iCarStation() { }
+
             // Constructor for iCarStation class
             public iCarStation(string address, DateTime pickUpDateTime, DateTime returnDateTime,
                                string stationID, string stationName, string operatingHrs, string contactInfo)
@@ -80,6 +82,8 @@ namespace SWAD_P03_GroupE_Classes
             public float DeliveryFee { get; set; }
             public string DeliveryStatus { get; set; }
 
+            public DeliveryService() { }
+
             // Constructor for DeliveryService class
             public DeliveryService(string address, DateTime pickUpDateTime, DateTime returnDateTime,
                                    string deliveryID, DateTime deliveryDateTime, float deliveryFee, string deliveryStatus)
@@ -92,7 +96,7 @@ namespace SWAD_P03_GroupE_Classes
             }
 
             //Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 
-            public DeliveryService(string address, string deliveryID, DateTime deliveryDateTime, string deliveryStatus,DateTime pickUpDateTime,DateTime returnDateTime)
+            public DeliveryService(string address, string deliveryID, DateTime deliveryDateTime, string deliveryStatus, DateTime pickUpDateTime, DateTime returnDateTime)
                 : base(address, pickUpDateTime, returnDateTime)
             {
                 Random r = new Random();
@@ -100,6 +104,16 @@ namespace SWAD_P03_GroupE_Classes
                 this.DeliveryFee = DeliveryFee;
                 this.DeliveryDateTime = deliveryDateTime;
                 this.DeliveryStatus = deliveryStatus;
+            }
+
+            // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
+            public DeliveryService(string deliveryID, DateTime deliveryDateTime, float deliveryFee, string deliveryStatus, string address) : base(address, DateTime.MinValue, DateTime.MinValue)
+            {
+                DeliveryID = deliveryID;
+                DeliveryDateTime = deliveryDateTime;
+                DeliveryFee = deliveryFee;
+                DeliveryStatus = deliveryStatus;
+                Address = address;
             }
 
             // Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 
@@ -111,9 +125,19 @@ namespace SWAD_P03_GroupE_Classes
                        $"Delivery Status: {DeliveryStatus}\n";
             }
 
-            public static void RecordDeliveryDetails (List<DeliveryService> deliveries, string address, DateTime deliveryDateTime)
+            // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
+            public static void RecordDeliveryDetails(List<DeliveryService> deliveries, string address, DateTime deliveryDateTime)
             {
-                // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
+                DeliveryService newDelivery = new DeliveryService(
+                    Guid.NewGuid().ToString(),
+                    deliveryDateTime,
+                    6, // Included in the service fees
+                    "Scheduled",
+                    address
+                );
+
+                deliveries.Add(newDelivery);
+                Console.WriteLine($"Delivery ID: {newDelivery.DeliveryID} has been scheduled successfully.");
             }
         }
     }

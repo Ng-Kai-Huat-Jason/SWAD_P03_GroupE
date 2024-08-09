@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SWAD_ReturnVehicle_UseCase
 {
-    internal class AccidentReport
+    public class AccidentReport
     {
         public string reportID { get; set; }
         public DateTime accidentDateTime { get; set; }
