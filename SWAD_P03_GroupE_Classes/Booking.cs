@@ -18,6 +18,8 @@ namespace SWAD_P03_GroupE_Classes
         public Location PickUpLocation { get; set; }
         public Location ReturnLocation { get; set; }
 
+        public Booking() {}
+
         // Constructor for Booking class
         public Booking(string bookingID, DateTime bookingDateTime, string bookingStatus,
                        float penaltyFee, float rentalFee, AvailabilitySlot bookedAvailabilitySlot,

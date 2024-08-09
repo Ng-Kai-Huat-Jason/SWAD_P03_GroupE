@@ -11,6 +11,8 @@ namespace SWAD_P03_GroupE_Classes
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
 
+        public AvailabilitySlot() { }
+
         // Constructor for AvailabilitySlot class
         public AvailabilitySlot(string availabilitySlotID, DateTime startTime, DateTime endTime)
         {

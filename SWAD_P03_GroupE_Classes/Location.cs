@@ -13,6 +13,8 @@ namespace SWAD_P03_GroupE_Classes
         public DateTime PickUpDateTime { get; set; }
         public DateTime ReturnDateTime { get; set; }
 
+        protected Location() { }
+
         // Constructor for Location class
         protected Location(string address, DateTime pickUpDateTime, DateTime returnDateTime)
         {
@@ -56,6 +58,7 @@ namespace SWAD_P03_GroupE_Classes
             public DateTime DeliveryDateTime { get; set; }
             public float DeliveryFee { get; set; }
             public string DeliveryStatus { get; set; }
+
             // Constructor for DeliveryService class
             public DeliveryService(string address, DateTime pickUpDateTime, DateTime returnDateTime,
                                    string deliveryID, DateTime deliveryDateTime, float deliveryFee, string deliveryStatus)

@@ -16,6 +16,10 @@ namespace SWAD_P03_GroupE_Classes
         public string Password { get; set; }
         public DateTime DateJoin { get; set; }
 
+        protected User()
+        {
+        }
+
         // Constructor
         public User(string userID, string fullName, string contactNumber, DateTime dateOfBirth,
                     string address, string zipcode, string emailAddress, string password, DateTime dateJoin)
@@ -31,6 +35,8 @@ namespace SWAD_P03_GroupE_Classes
             DateJoin = dateJoin;
         }
 
+
+
         public User RetrieveUser()
         {
             return this;
@@ -44,6 +50,8 @@ namespace SWAD_P03_GroupE_Classes
     {
         public float ProjectedMonthlyRevenue { get; set; }
         public List<Vehicle> Vehicles { get; set; }
+
+        public CarOwner() { }
 
         // Constructor
         public CarOwner(string userID, string fullName, string contactNumber, DateTime dateOfBirth,
@@ -110,6 +118,8 @@ namespace SWAD_P03_GroupE_Classes
     {
         public string Role { get; set; }
 
+        public Admin() { }
+
         // Constructor
         public Admin(string userID, string fullName, string contactNumber, DateTime dateOfBirth,
                      string address, string zipcode, string emailAddress, string password, DateTime dateJoin, string role)
@@ -148,8 +158,9 @@ namespace SWAD_P03_GroupE_Classes
         public bool VerificationEmailSent { get; set; }
         public string VerificationStatus { get; set; }
         public List<Booking> BookingsList { get; set; }
-
         public DriverLicence DriverLicence { get; set; }
+
+        public Renter() { }
 
         // Constructor
         public Renter(string userID, string fullName, string contactNumber, DateTime dateOfBirth,
