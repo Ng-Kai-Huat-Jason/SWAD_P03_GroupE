@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 namespace SWAD_P03_GroupE_Classes;
 public class Payment
 {
-    public string PaymentID { get; set; } // PaymentID is read-only outside of the class
-    public float Amount { get; set; } // Amount is read-only outside of the class
-    public string PaymentMethod { get; set; } // e.g., "CreditCard", "PayNow"
-    public string PaymentStatus { get; set; } // e.g., "Pending", "Confirmed"
+    public string PaymentID { get; set; } 
+    public float Amount { get; set; } 
+    public string PaymentMethod { get; set; } 
+    public string PaymentStatus { get; set; } 
+    public DiscountCode DiscountCode { get; set; } 
 
     public Payment()
     {
@@ -22,6 +23,7 @@ public class Payment
         Amount = amount;
         PaymentMethod = paymentMethod;
         PaymentStatus = paymentStatus;
+        DiscountCode = null; 
     }
 
     // Implemented by Ng Jing Zhan Garrett, S10257347, Use Case : Make Payment

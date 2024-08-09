@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using SWAD_ReturnVehicle_UseCase;
+using System.Text.RegularExpressions;
 
 namespace SWAD_P03_GroupE_Classes
 {
@@ -19,8 +20,9 @@ namespace SWAD_P03_GroupE_Classes
         public List<Photo> Photos { get; set; }
         public List<Reviews> Reviews { get; set; }
         public List<InspectionReport> InspectionReports { get; set; }
-
+        public List<AccidentReport> AccidentReports { get; set; }
         public List<Booking> BookingsList { get; set; }
+
         public Vehicle()
         {
             VehicleID = Guid.NewGuid().ToString(); // Global UID
@@ -37,7 +39,8 @@ namespace SWAD_P03_GroupE_Classes
             Availability = null; // Null or default value
             Photos = new List<Photo>(); // Initialize to an empty list
             InspectionReports = new List<InspectionReport>(); // Initialize to an empty list
-            BookingsList = new List<Booking>();
+            BookingsList = new List<Booking>(); // Initialize to an empty list
+            AccidentReports = new List<AccidentReport>(); // Initialize to an empty list
         }
 
         public Vehicle(string vehicleRegNo, string make, string model, float rentalRate, int maxSeatingCapacity, int year, float mileage)
@@ -55,7 +58,8 @@ namespace SWAD_P03_GroupE_Classes
             InsuranceDetails = null; // Null or default value
             Availability = null; // Null or default value
             Photos = new List<Photo>(); // Initialize to an empty list
-            BookingsList = new List<Booking>();
+            BookingsList = new List<Booking>(); // Initialize to an empty list
+            AccidentReports = new List<AccidentReport>(); // Initialize to an empty list
         }
 
 
@@ -359,19 +363,16 @@ namespace SWAD_P03_GroupE_Classes
             }
             return true;
         }
-        
 
-        public static bool ValidateBookedVehicle(List<Vehicle> vehicles,
-                                          List<VehicleAvailability> vehicleAvailabilities,
-                                          string brand,
-                                          string model,
-                                          DateTime startDateTime,
-                                          DateTime endDateTime,
-                                          out Vehicle selectedVehicle)
+        // Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
+        public static bool ValidateBookedVehicle(List<Vehicle> vehicles, List<VehicleAvailability> vehicleAvailabilities, string make, string model, DateTime startDateTime, DateTime endDateTime, out Vehicle selectedVehicle)
         {
-            selectedVehicle = null;
+            selectedVehicle = vehicles.Find(v => v.Make.Equals(make, StringComparison.OrdinalIgnoreCase) && v.Model.Equals(model, StringComparison.OrdinalIgnoreCase));
+            if (selectedVehicle != null)
+            {
+                return VehicleAvailability.CheckAvailability(vehicleAvailabilities, startDateTime, endDateTime);
+            }
             return false;
-            // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
         }
 
         // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner

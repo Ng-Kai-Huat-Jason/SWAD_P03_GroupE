@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SWAD_ReturnVehicle_UseCase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace SWAD_P03_GroupE_Classes
 {
-    // This class is not utilised for use case, only kept here for parity with other use cases
     public class Booking
     {
         public string BookingID { get; set; }
@@ -17,10 +17,10 @@ namespace SWAD_P03_GroupE_Classes
         public AvailabilitySlot BookedAvailabilitySlot { get; set; }
         public Vehicle Vehicle { get; set; }
         public Reviews Reviews { get; set; }
-
         public Payment Payment { get; set; }
         public Location PickUpLocation { get; set; }
         public Location ReturnLocation { get; set; }
+        public AccidentReport AccidentReport { get; set; }
         public Booking() {}
 
         // Constructor for Booking class
@@ -39,6 +39,7 @@ namespace SWAD_P03_GroupE_Classes
             Payment = null; // Set to null, not in params
             PickUpLocation = pickUpLocation;
             ReturnLocation = returnLocation;
+            AccidentReport = null; // Set to null, not in params
         }
 
 
@@ -54,7 +55,8 @@ namespace SWAD_P03_GroupE_Classes
             Payment = null;
             Reviews = null; 
             PickUpLocation = null; 
-            ReturnLocation = null; 
+            ReturnLocation = null;
+            AccidentReport = null; 
         }
 
         // Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 

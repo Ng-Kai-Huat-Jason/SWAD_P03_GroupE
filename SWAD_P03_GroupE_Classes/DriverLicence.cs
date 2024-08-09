@@ -8,7 +8,6 @@ namespace SWAD_P03_GroupE_Classes
 {
     public class DriverLicence
     {
-        // This class is not utilised for use case, only kept here for parity with other use cases
         public string LicenceID { get; set; }
         public string LicenceNo { get; set; }
         public int NumberOfDemeritPoints { get; set; }
