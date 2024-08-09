@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,9 @@ namespace SWAD_P03_GroupE_Classes
             PickUpDateTime = pickUpDateTime;
             ReturnDateTime = returnDateTime;
         }
+
+        public abstract string GetLocation();
+
         public class iCarStation : Location
         {
             public string StationID { get; set; }
@@ -39,16 +43,21 @@ namespace SWAD_P03_GroupE_Classes
                 OperatingHrs = operatingHrs;
                 ContactInfo = contactInfo;
             }
-            public string GetLocation()
-            {
-                return string.Empty;
-                // Function Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 
-            }
 
             public bool ValidatePickUpLocation()
             {
                 return true;
                 // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
+            }
+
+            // Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 
+            public override string GetLocation()
+            {
+                return $"Station ID: {StationID}\n" +
+                       $"Station Name: {StationName}\n" +
+                       $"Address: {Address}\n" +
+                       $"Operating Hours: {OperatingHrs}\n" +
+                       $"Contact Info: {ContactInfo}\n";
             }
         }
 
@@ -68,6 +77,26 @@ namespace SWAD_P03_GroupE_Classes
                 DeliveryDateTime = deliveryDateTime;
                 DeliveryFee = deliveryFee;
                 DeliveryStatus = deliveryStatus;
+            }
+
+            //Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 
+            public DeliveryService(string address, string deliveryID, DateTime deliveryDateTime, string deliveryStatus,DateTime pickUpDateTime,DateTime returnDateTime)
+                : base(address, pickUpDateTime, returnDateTime)
+            {
+                Random r = new Random();
+                this.DeliveryID = r.Next(0, 100).ToString();
+                this.DeliveryFee = DeliveryFee;
+                this.DeliveryDateTime = deliveryDateTime;
+                this.DeliveryStatus = deliveryStatus;
+            }
+
+            // Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 
+            public override string GetLocation()
+            {
+                return $"Delivery ID: {DeliveryID}\n" +
+                       $"Address: {Address}\n" +
+                       $"Delivery Date and Time: {DeliveryDateTime}\n" +
+                       $"Delivery Status: {DeliveryStatus}\n";
             }
 
             public static void RecordDeliveryDetails (List<DeliveryService> deliveries, string address, DateTime deliveryDateTime)

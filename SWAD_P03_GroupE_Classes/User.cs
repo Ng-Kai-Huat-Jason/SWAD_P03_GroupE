@@ -183,9 +183,10 @@ namespace SWAD_P03_GroupE_Classes
             return BookingsList;
         }
 
+        // Function Implemented by Liang Ding Xuan, S10258272, Use Case: Return Vehicle 
         public void CompleteBooking(Booking booking)
         {
-            // Function Implemented by Liang Ding Xuan, S10258272, Use Case: Return Vehicle 
+            BookingsList.Remove(booking);
         }
 
         // Override the DisplayUserInfo method
@@ -235,5 +236,6 @@ namespace SWAD_P03_GroupE_Classes
         {
             DriverLicence = aLicence;
         }
+
     }
 }
