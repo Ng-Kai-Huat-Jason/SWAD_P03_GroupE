@@ -17,7 +17,10 @@ namespace SWAD_P03_GroupE_Classes
         public Insurance InsuranceDetails { get; set; }
         public VehicleAvailability Availability { get; set; }
         public List<Photo> Photos { get; set; }
+        public List<Reviews> Reviews { get; set; }
         public List<InspectionReport> InspectionReports { get; set; }
+
+        public List<Booking> BookingsList { get; set; }
         public Vehicle()
         {
             VehicleID = Guid.NewGuid().ToString(); // Global UID
@@ -34,6 +37,7 @@ namespace SWAD_P03_GroupE_Classes
             Availability = null; // Null or default value
             Photos = new List<Photo>(); // Initialize to an empty list
             InspectionReports = new List<InspectionReport>(); // Initialize to an empty list
+            BookingsList = new List<Booking>();
         }
 
         public Vehicle(string vehicleRegNo, string make, string model, float rentalRate, int maxSeatingCapacity, int year, float mileage)
@@ -51,6 +55,7 @@ namespace SWAD_P03_GroupE_Classes
             InsuranceDetails = null; // Null or default value
             Availability = null; // Null or default value
             Photos = new List<Photo>(); // Initialize to an empty list
+            BookingsList = new List<Booking>();
         }
 
 
