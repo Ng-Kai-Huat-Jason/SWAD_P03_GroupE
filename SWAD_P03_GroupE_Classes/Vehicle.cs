@@ -60,6 +60,7 @@ namespace SWAD_P03_GroupE_Classes
             Photos = new List<Photo>(); // Initialize to an empty list
             BookingsList = new List<Booking>(); // Initialize to an empty list
             AccidentReports = new List<AccidentReport>(); // Initialize to an empty list
+            InspectionReports = new List<InspectionReport>(); // Initialize to an empty list
         }
 
 

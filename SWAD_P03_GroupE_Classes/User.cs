@@ -16,9 +16,7 @@ namespace SWAD_P03_GroupE_Classes
         public string Password { get; set; }
         public DateTime DateJoin { get; set; }
 
-        protected User()
-        {
-        }
+        protected User(){}
 
         // Constructor
         protected User(string userID, string fullName, string contactNumber, DateTime dateOfBirth,

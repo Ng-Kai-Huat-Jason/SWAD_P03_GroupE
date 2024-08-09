@@ -13,9 +13,7 @@ namespace SWAD_ReturnVehicle_UseCase
         public string accidentDesc { get; set; }
         public string accidentLocation { get; set; }
 
-        public AccidentReport()
-        {
-        }
+        public AccidentReport(){}
 
         public AccidentReport(string reportID, DateTime accidentDateTime, string accidentDescription, string accidentLocation)
         {

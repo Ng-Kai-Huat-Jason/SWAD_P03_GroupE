@@ -13,9 +13,7 @@ public class Payment
     public string PaymentStatus { get; set; } 
     public DiscountCode DiscountCode { get; set; } 
 
-    public Payment()
-    {
-    }
+    public Payment(){}
 
     public Payment(float amount, string paymentMethod, string paymentStatus)
     {

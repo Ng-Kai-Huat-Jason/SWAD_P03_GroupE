@@ -15,9 +15,7 @@ namespace SWAD_P03_GroupE_Classes
         public DateTime DateOfIssue { get; set; }
         public Boolean CertificateOfMeritEligilibility { get; set; }
 
-        public DriverLicence()
-        {
-        }
+        public DriverLicence(){}
 
         public DriverLicence(string licenceID, string licenceNo, int numberOfDemeritPoints, string classOfLicence, DateTime dateOfIssue, bool certificateOfMeritEligibility)
         {
