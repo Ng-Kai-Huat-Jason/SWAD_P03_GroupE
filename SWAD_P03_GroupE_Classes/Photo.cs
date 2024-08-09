@@ -21,6 +21,7 @@ namespace SWAD_P03_GroupE_Classes
                 PhotoID = photoID;
             }
 
+            // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
             // Simulate photo creation
             public static Photo CreatePhoto()
             {
