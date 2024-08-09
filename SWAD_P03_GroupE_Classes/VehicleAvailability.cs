@@ -68,7 +68,7 @@ namespace SWAD_P03_GroupE_Classes
         // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
         public static bool CheckAvailability(List<VehicleAvailability> availabilities, DateTime startDateTime, DateTime endDateTime)
         {
-            if (!validateAvailabilitySlots(startDateTime, endDateTime))
+            if (!ValidateAvailabilitySlots(startDateTime, endDateTime))
             {
                 return false;
             }
@@ -89,7 +89,7 @@ namespace SWAD_P03_GroupE_Classes
 
 
         // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
-        public static bool validateAvailabilitySlots(DateTime startDateTime, DateTime endDateTime)
+        public static bool ValidateAvailabilitySlots(DateTime startDateTime, DateTime endDateTime)
         {
             DateTime currentTime = DateTime.Now;
 
