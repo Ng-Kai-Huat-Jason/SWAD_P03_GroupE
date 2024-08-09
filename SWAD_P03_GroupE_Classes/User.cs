@@ -149,7 +149,7 @@ namespace SWAD_P03_GroupE_Classes
         public string VerificationStatus { get; set; }
         public List<Booking> BookingsList { get; set; }
 
-        public DriverLicense DriverLicense { get; set; }
+        public DriverLicence DriverLicence { get; set; }
 
         // Constructor
         public Renter(string userID, string fullName, string contactNumber, DateTime dateOfBirth,
@@ -164,7 +164,7 @@ namespace SWAD_P03_GroupE_Classes
             VerificationEmailSent = verificationEmailSent;
             VerificationStatus = verificationStatus;
             BookingsList = new List<Booking>();
-            DriverLicense = new DriverLicense();
+            DriverLicence = null;
         }
 
         public List<Booking> RetrieveBookings()
@@ -195,6 +195,34 @@ namespace SWAD_P03_GroupE_Classes
             Console.WriteLine($"Verification Email Sent: {VerificationEmailSent}");
             Console.WriteLine($"Verification Status: {VerificationStatus}");
             return this;
+        }
+
+
+        // Implemented by Ng Kai Huat Jason, S10262552, Use Case : Register as Renter
+        public static Renter CreateRenter(string fullName, string contactNumber, DateTime dateOfBirth, string address, string zipcode, string emailAddress, string password, string renterType)
+        {
+            return new Renter(
+                userID: Guid.NewGuid().ToString(),
+                fullName: fullName,
+                contactNumber: contactNumber,
+                dateOfBirth: dateOfBirth,
+                address: address,
+                zipcode: zipcode,
+                emailAddress: emailAddress,
+                password: password,
+                dateJoin: DateTime.Now,
+                renterType: renterType,
+                backgroundCheckStatus: "Pending",
+                registrationStatus: "Pending",
+                verificationEmailSent: false,
+                verificationStatus: "Unverified"
+            );
+        }
+
+        // Implemented by Ng Kai Huat Jason, S10262552, Use Case : Register as Renter
+        public void addLicenceToRenter(DriverLicence aLicence)
+        {
+            DriverLicence = aLicence;
         }
     }
 }
