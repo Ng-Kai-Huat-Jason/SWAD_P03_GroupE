@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using static SWAD_P03_GroupE_Classes.Location;
 
 namespace SWAD_P03_GroupE_Classes
 {
@@ -44,10 +45,21 @@ namespace SWAD_P03_GroupE_Classes
                 ContactInfo = contactInfo;
             }
 
-            public bool ValidatePickUpLocation()
+            // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
+            public iCarStation ValidateICarStationPickupLocation(List<iCarStation> iCarStations)
             {
-                return true;
-                // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
+                string stationID = Console.ReadLine();
+                var selectedStation = iCarStations.Find(s => s.StationID == stationID);
+                if (selectedStation != null)
+                {
+                    Console.WriteLine($"You have selected {selectedStation.StationName} for pickup.");
+                    return selectedStation;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Station ID.");
+                    return null;
+                }
             }
 
             // Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 

@@ -11,7 +11,7 @@ namespace SWAD_P03_GroupE_Classes
         public string ContactNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Address { get; set; }
-        public string Zipcode { get; set; } // Added Zipcode
+        public string Zipcode { get; set; } 
         public string EmailAddress { get; set; }
         public string Password { get; set; }
         public DateTime DateJoin { get; set; }
@@ -29,7 +29,7 @@ namespace SWAD_P03_GroupE_Classes
             ContactNumber = contactNumber;
             DateOfBirth = dateOfBirth;
             Address = address;
-            Zipcode = zipcode; // Initialize Zipcode
+            Zipcode = zipcode; 
             EmailAddress = emailAddress;
             Password = password;
             DateJoin = dateJoin;

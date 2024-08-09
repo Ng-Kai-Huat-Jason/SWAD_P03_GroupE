@@ -15,10 +15,12 @@ namespace SWAD_P03_GroupE_Classes
         public float PenaltyFee { get; set; }
         public float RentalFee { get; set; }
         public AvailabilitySlot BookedAvailabilitySlot { get; set; }
-        public Location PickUpLocation { get; set; }
-        public Location ReturnLocation { get; set; }
         public Vehicle Vehicle { get; set; }
         public Reviews Reviews { get; set; }
+
+        public Payment Payment { get; set; }
+        public Location PickUpLocation { get; set; }
+        public Location ReturnLocation { get; set; }
         public Booking() {}
 
         // Constructor for Booking class
@@ -32,6 +34,9 @@ namespace SWAD_P03_GroupE_Classes
             PenaltyFee = penaltyFee;
             RentalFee = rentalFee;
             BookedAvailabilitySlot = bookedAvailabilitySlot;
+            Vehicle = null; // Set to null, not in params
+            Reviews = null; // Set to null, not in params
+            Payment = null; // Set to null, not in params
             PickUpLocation = pickUpLocation;
             ReturnLocation = returnLocation;
         }
@@ -46,6 +51,10 @@ namespace SWAD_P03_GroupE_Classes
             PenaltyFee = penaltyFee;
             RentalFee = rentalFee;
             BookedAvailabilitySlot = availabilitySlot;
+            Payment = null;
+            Reviews = null; 
+            PickUpLocation = null; 
+            ReturnLocation = null; 
         }
 
         // Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 

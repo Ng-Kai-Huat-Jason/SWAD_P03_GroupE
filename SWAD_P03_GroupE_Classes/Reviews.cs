@@ -10,7 +10,6 @@ namespace SWAD_P03_GroupE_Classes
     {
         string reviewID { get; set; }
         int starInt { get; set; }
-
         string reviewDesc { get; set; }
 
         public Reviews()
@@ -23,7 +22,5 @@ namespace SWAD_P03_GroupE_Classes
             starInt = StarInt;
             reviewDesc = ReviewDesc;
         }
-
-
     }
 }

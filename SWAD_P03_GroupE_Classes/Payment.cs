@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 namespace SWAD_P03_GroupE_Classes;
 public class Payment
 {
-    private static int _lastPaymentID = 0; // Static variable to track the last assigned PaymentID
-
-    public int PaymentID { get; set; } // PaymentID is read-only outside of the class
+    public string PaymentID { get; set; } // PaymentID is read-only outside of the class
     public float Amount { get; set; } // Amount is read-only outside of the class
     public string PaymentMethod { get; set; } // e.g., "CreditCard", "PayNow"
     public string PaymentStatus { get; set; } // e.g., "Pending", "Confirmed"
@@ -18,9 +16,9 @@ public class Payment
     {
     }
 
-    public Payment(int paymentID, float amount, string paymentMethod, string paymentStatus)
+    public Payment(float amount, string paymentMethod, string paymentStatus)
     {
-        PaymentID = paymentID;
+        PaymentID = Guid.NewGuid().ToString();
         Amount = amount;
         PaymentMethod = paymentMethod;
         PaymentStatus = paymentStatus;
@@ -38,24 +36,9 @@ public class Payment
             throw new ArgumentException("Payment method must be provided.");
         }
 
-        Payment payment = new Payment
-        {
-            PaymentID = GeneratePaymentID(),
-            Amount = amount,
-            PaymentMethod = paymentMethod,
-            PaymentStatus = "Pending"
-        };
-
-        return payment;
+        return new Payment(amount, paymentMethod, "Pending");
     }
 
-    // Implemented by Ng Jing Zhan Garrett, S10257347, Use Case : Make Payment
-    // Method to generate a unique PaymentID
-    private static int GeneratePaymentID()
-    {
-        _lastPaymentID++; // Increment the last assigned ID
-        return _lastPaymentID; // Return the new ID
-    }
 
     // Implemented by Ng Jing Zhan Garrett, S10257347, Use Case : Make Payment
     // Method to update the payment status
