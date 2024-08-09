@@ -14,10 +14,10 @@ public class DiscountCode
 
     public DiscountCode(){}
 
-    public DiscountCode(string disccode, string discountType, float discountValue)
+    public DiscountCode(string discCode, string discountType, float discountValue)
     {
         DiscountID = Guid.NewGuid().ToString();
-        DiscCode = disccode;
+        DiscCode = discCode;
         DiscountType = discountType;
         DiscountValue = discountValue;
     }
