@@ -51,6 +51,8 @@ namespace SWAD_P03_GroupE_Classes
             Photos = new List<Photo>(); // Initialize to an empty list
         }
 
+
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public static Vehicle CreateVehicle()
         {
             string input;
@@ -167,6 +169,8 @@ namespace SWAD_P03_GroupE_Classes
             return vehicle;
         }
 
+
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public void AddFuelType()
         {
             FuelType fuelType = null;
@@ -207,13 +211,14 @@ namespace SWAD_P03_GroupE_Classes
             SetFuelType(fuelType);
         }
 
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         // Method to set FuelType, this is 4.1.1.2, 5.2, 6.2 in Sequence Diagram
         public void SetFuelType(FuelType fuelType)
         {
             FuelType = fuelType;
         }
 
-        // Method to validate vehicle
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public bool ValidateVehicle()
         {
             // Validate Vehicle Registration Number
@@ -348,6 +353,7 @@ namespace SWAD_P03_GroupE_Classes
             return true;
         }
         
+
         public static bool ValidateBookedVehicle(List<Vehicle> vehicles,
                                           List<VehicleAvailability> vehicleAvailabilities,
                                           string brand,
@@ -361,7 +367,7 @@ namespace SWAD_P03_GroupE_Classes
             // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
         }
 
-        // Method to add a photo to the vehicle
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public void AddPhoto(Photo photo)
         {
             if (photo != null)
@@ -375,6 +381,8 @@ namespace SWAD_P03_GroupE_Classes
             }
         }
 
+
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public void AddInsurance(Insurance insurance)
         {
             if (insurance != null)
@@ -383,6 +391,8 @@ namespace SWAD_P03_GroupE_Classes
             }
         }
 
+
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public void AddVehicleAvailability (VehicleAvailability vehicleAvailability)
         {
             if (vehicleAvailability != null)
@@ -391,7 +401,7 @@ namespace SWAD_P03_GroupE_Classes
             }
         }
 
-        // Method to display vehicle information
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public void DisplayVehicleInformation()
         {
             Console.WriteLine("Vehicle Information:");

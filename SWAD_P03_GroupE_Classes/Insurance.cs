@@ -12,6 +12,7 @@ namespace SWAD_P03_GroupE_Classes
         public string CoverageDetails { get; set; }
         public DateTime InsuranceStartDate { get; set; }
         public DateTime InsuranceEndDate { get; set; }
+
         // Constructor for Insurance class
         public Insurance(string insuranceID, string coverageDetails, DateTime insuranceStartDate, DateTime insuranceEndDate)
         {
@@ -31,6 +32,7 @@ namespace SWAD_P03_GroupE_Classes
             InsuranceEndDate = insuranceEndDate;
         }
 
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public static Insurance CreateInsurance()
         {
             string input;
@@ -79,6 +81,7 @@ namespace SWAD_P03_GroupE_Classes
             }
         }
 
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public bool ValidateInsurance()
         {
             // Validate InsuranceID is not empty
@@ -100,6 +103,8 @@ namespace SWAD_P03_GroupE_Classes
             return true;
         }
 
+
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public void DisplayInsuranceInformation()
         {
             Console.WriteLine("Insurance Information:");

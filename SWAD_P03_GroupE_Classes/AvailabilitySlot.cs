@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +18,8 @@ namespace SWAD_P03_GroupE_Classes
             StartTime = startTime;
             EndTime = endTime;
         }
+
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public static AvailabilitySlot CreateAvailabilitySlot()
         {
             Console.Write("Enter Start Time (yyyy-mm-dd hh:mm): ");
@@ -30,6 +31,7 @@ namespace SWAD_P03_GroupE_Classes
             return new AvailabilitySlot(Guid.NewGuid().ToString(), startTime, endTime);
         }
 
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public bool ValidateAvailabilitySlot()
         {
             DateTime currentTime = DateTime.Now;

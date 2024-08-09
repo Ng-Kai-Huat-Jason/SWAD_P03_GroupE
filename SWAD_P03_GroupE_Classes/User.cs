@@ -54,14 +54,14 @@ namespace SWAD_P03_GroupE_Classes
             Vehicles = new List<Vehicle>();
         }
 
-        // Method to register a vehicle, adding to vehicle list
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public void RegisterAVehicle(Vehicle vehicle)
         {
             Vehicles.Add(vehicle);
             Console.WriteLine("Vehicle registered successfully!");
         }
 
-        // This method is for showcase purposes
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public void DisplayAllVehicleInformation()
         {
             if (Vehicles.Count == 0)
@@ -75,7 +75,7 @@ namespace SWAD_P03_GroupE_Classes
             }
         }
 
-        // New method to display a specific vehicle by its ID
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public void DisplayVehicleById(string vehicleId)
         {
             var vehicle = Vehicles.FirstOrDefault(v => v.VehicleID == vehicleId);
@@ -89,7 +89,7 @@ namespace SWAD_P03_GroupE_Classes
             }
         }
 
-        // Override the DisplayUserInfo method
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public override User DisplayUserInfo()
         {
             Console.WriteLine("Car Owner Information:");

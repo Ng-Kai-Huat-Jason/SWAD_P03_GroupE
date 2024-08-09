@@ -22,6 +22,7 @@ namespace SWAD_P03_GroupE_Classes
             VehicleMaxFuelCapacity = vehicleMaxFuelCapacity;
         }
 
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public override void DisplayFuelTypeInformation()
         {
             Console.WriteLine("Fuel Type: Gas");
@@ -30,6 +31,7 @@ namespace SWAD_P03_GroupE_Classes
             Console.WriteLine($"Vehicle Max Fuel Capacity: {VehicleMaxFuelCapacity} liters");
         }
 
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public override void CreateFuelType()
         {
             Console.WriteLine("Enter Preferred Petrol Kiosk:");
@@ -59,6 +61,7 @@ namespace SWAD_P03_GroupE_Classes
             VehicleMaxChargeCapacity = vehicleMaxChargeCapacity;
         }
 
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public override void DisplayFuelTypeInformation()
         {
             Console.WriteLine("Fuel Type: Electric");
@@ -68,6 +71,7 @@ namespace SWAD_P03_GroupE_Classes
             Console.WriteLine($"Vehicle Max Charge Capacity: {VehicleMaxChargeCapacity} kWh");
         }
 
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public override void CreateFuelType()
         {
             Console.WriteLine("Enter Preferred Charging Station:");
@@ -108,6 +112,7 @@ namespace SWAD_P03_GroupE_Classes
             VehicleMaxChargeCapacity = vehicleMaxChargeCapacity;
         }
 
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public override void DisplayFuelTypeInformation()
         {
             Console.WriteLine("Fuel Type: Hybrid");
@@ -120,6 +125,7 @@ namespace SWAD_P03_GroupE_Classes
             Console.WriteLine($"Vehicle Max Charge Capacity: {VehicleMaxChargeCapacity} kWh");
         }
 
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public override void CreateFuelType()
         {
             Console.WriteLine("Enter Preferred Petrol Kiosk:");

@@ -18,6 +18,8 @@ namespace SWAD_P03_GroupE_Classes
             AvailabilitySlots = availabilitySlots;
         }
 
+
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public static VehicleAvailability CreateVehicleAvailability()
         {
             // Generate a new GUID 
@@ -29,6 +31,8 @@ namespace SWAD_P03_GroupE_Classes
             return new VehicleAvailability(availabilityID, availabilitySlots);
         }
 
+
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public void AddAvailabilitySlot(AvailabilitySlot slot)
         {
             if (slot != null && slot.ValidateAvailabilitySlot())
@@ -42,6 +46,8 @@ namespace SWAD_P03_GroupE_Classes
             }
         }
 
+
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public void DisplayAvailabilityInformation()
         {
             Console.WriteLine("Vehicle Availability Information:");
@@ -54,12 +60,17 @@ namespace SWAD_P03_GroupE_Classes
                 Console.WriteLine($"  End Time: {slot.EndTime}");
             }
         }
+
+
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public bool CheckAvailability(List<VehicleAvailability> availabilites, DateTime startDateTime, DateTime endDateTime)
         {
             return true;
             // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
         }
 
+
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public bool ValidateAvailabilitySlot(DateTime startDateTime, DateTime endDateTime)
         {
             return true;
