@@ -17,7 +17,7 @@ namespace SWAD_P03_GroupE_Classes
         public AvailabilitySlot BookedAvailabilitySlot { get; set; }
         public Location PickUpLocation { get; set; }
         public Location ReturnLocation { get; set; }
-
+        public Vehicle Vehicle { get; set; }
         public Booking() {}
 
         // Constructor for Booking class
@@ -34,20 +34,41 @@ namespace SWAD_P03_GroupE_Classes
             PickUpLocation = pickUpLocation;
             ReturnLocation = returnLocation;
         }
+
+
+        public Booking(string bookingID, DateTime bookingDate, Vehicle vehicle, string bookingStatus, float penaltyFee, float rentalFee, AvailabilitySlot availabilitySlot)
+        {
+            BookingID = bookingID;
+            BookingDateTime = bookingDate;
+            Vehicle = vehicle;
+            BookingStatus = bookingStatus;
+            PenaltyFee = penaltyFee;
+            RentalFee = rentalFee;
+            BookedAvailabilitySlot = availabilitySlot;
+        }
+
+        // Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 
+        public void SetReturnLocation(Location location)
+        {
+            ReturnLocation = location;
+        }
+
+        // Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 
         public string GetDetails()
         {
-            return string.Empty;
-            // Function Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 
+            return $"BookingID: {BookingID}, \n " +
+                $"Booking Date: {BookingDateTime}, " +
+                $"\n Vehicle: {Vehicle.Make} {Vehicle.Model}, " +
+                $"\n Booking Status: {BookingStatus}, " +
+                $"\n Availability Slot: {BookedAvailabilitySlot.StartTime} - {BookedAvailabilitySlot.EndTime}, " +
+                $"\n Rental Fee: {RentalFee}, " +
+                $"\n Penalty Fee: {PenaltyFee}";
         }
 
-        public void SetLocation(Location location)
+        // Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 
+        public void ReturnVehicle()
         {
-           // Function Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 
-        }
-
-        public void Return()
-        {
-            // Function Implemented by Liang Ding Xuan, S10258272, Use Case : Return Vehicle 
+            BookingStatus = "Completed";
         }
     }
 }

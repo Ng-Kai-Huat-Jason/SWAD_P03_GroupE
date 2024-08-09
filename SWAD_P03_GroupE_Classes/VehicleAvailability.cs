@@ -65,20 +65,50 @@ namespace SWAD_P03_GroupE_Classes
             }
         }
 
-
-        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
+        // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
         public bool CheckAvailability(List<VehicleAvailability> availabilites, DateTime startDateTime, DateTime endDateTime)
         {
-            return true;
-            // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
+
+            if (!validateAvailabilitySlots(startDateTime, endDateTime))
+            {
+                return false;
+            }
+
+            foreach (var availability in availabilites)
+            {
+                foreach (var slot in availability.AvailabilitySlots)
+                {
+                    if (startDateTime >= slot.StartTime && endDateTime <= slot.EndTime)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
-
-        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
-        public bool ValidateAvailabilitySlot(DateTime startDateTime, DateTime endDateTime)
+        // Function Implemented by Tan Guo Zhi Kelvin, S10262567, Use Case : Book Vehicle
+        public static bool validateAvailabilitySlots(DateTime startDateTime, DateTime endDateTime)
         {
-            return true;
+            DateTime currentTime = DateTime.Now;
 
+            // Check if start time is before end time
+            if (startDateTime >= endDateTime)
+            {
+                Console.WriteLine("Invalid slot: Start time must be before end time.");
+                return false;
+            }
+
+            // Check if start time is at least 24 hours from now
+            if (startDateTime <= currentTime.AddHours(24))
+            {
+                Console.WriteLine("Invalid slot: Start time must be at least 24 hours from now.");
+                return false;
+            }
+
+            return true;
         }
+
     }
 }
