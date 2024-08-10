@@ -35,12 +35,13 @@ namespace SWAD_P03_GroupE_Classes
         }
 
 
-
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         public User RetrieveUser()
         {
             return this;
         }
 
+        // Implemented by Yeo Jin Rong, S10258457, Use Case : Register Vehicle as Car Owner
         // Abstract method to display User information
         public abstract User DisplayUserInfo();
     }
