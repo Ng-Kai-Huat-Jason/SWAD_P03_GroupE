@@ -8,21 +8,21 @@ namespace SWAD_P03_GroupE_Classes
 {
     public class InspectionReport
     {
-        public string inspectionID { get; set; }
-        public string reportDetails { get; set; }
-        public DateTime inspectionDateTime { get; set; }
-        public string inspectorName { get; set; }
-        public string status { get; set; }
+        public string InspectionID { get; set; }
+        public string ReportDetails { get; set; }
+        public DateTime InspectionDateTime { get; set; }
+        public string InspectorName { get; set; }
+        public string Status { get; set; }
 
         public InspectionReport(){}
 
-        public InspectionReport(string InspectionID, string ReportDetails, DateTime InspectionDateTime, string InspectorName, string Status)
+        public InspectionReport(string inspectionID, string reportDetails, DateTime inspectionDateTime, string inspectorName, string status)
         {
-            inspectionID = InspectionID;
-            reportDetails = ReportDetails;
-            inspectionDateTime = InspectionDateTime;
-            inspectorName = InspectorName;
-            status = Status;
+            InspectionID = inspectionID;
+            ReportDetails = reportDetails;
+            InspectionDateTime = inspectionDateTime;
+            InspectorName = inspectorName;
+            Status = status;
         }
 
 

@@ -8,17 +8,17 @@ namespace SWAD_P03_GroupE_Classes
 {
     public class Reviews
     {
-        string reviewID { get; set; }
-        int starInt { get; set; }
-        string reviewDesc { get; set; }
+        string ReviewID { get; set; }
+        int StarInt { get; set; }
+        string ReviewDesc { get; set; }
 
         public Reviews(){}
 
-        public Reviews(string ReviewID, int StarInt, string ReviewDesc)
+        public Reviews(string reviewID, int starInt, string reviewDesc)
         {
-            reviewID = ReviewID;
-            starInt = StarInt;
-            reviewDesc = ReviewDesc;
+            ReviewID = reviewID;
+            StarInt = starInt;
+            ReviewDesc = reviewDesc;
         }
     }
 }

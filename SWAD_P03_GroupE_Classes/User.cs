@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 
 namespace SWAD_P03_GroupE_Classes
 {
@@ -11,7 +12,7 @@ namespace SWAD_P03_GroupE_Classes
         public string ContactNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Address { get; set; }
-        public string Zipcode { get; set; } 
+        public string ZipCode { get; set; } 
         public string EmailAddress { get; set; }
         public string Password { get; set; }
         public DateTime DateJoin { get; set; }
@@ -20,14 +21,14 @@ namespace SWAD_P03_GroupE_Classes
 
         // Constructor
         protected User(string userID, string fullName, string contactNumber, DateTime dateOfBirth,
-                    string address, string zipcode, string emailAddress, string password, DateTime dateJoin)
+                    string address, string zipCode, string emailAddress, string password, DateTime dateJoin)
         {
             UserID = userID;
             FullName = fullName;
             ContactNumber = contactNumber;
             DateOfBirth = dateOfBirth;
             Address = address;
-            Zipcode = zipcode; 
+            ZipCode = zipCode; 
             EmailAddress = emailAddress;
             Password = password;
             DateJoin = dateJoin;
@@ -53,8 +54,8 @@ namespace SWAD_P03_GroupE_Classes
 
         // Constructor
         public CarOwner(string userID, string fullName, string contactNumber, DateTime dateOfBirth,
-                        string address, string zipcode, string emailAddress, string password, DateTime dateJoin)
-            : base(userID, fullName, contactNumber, dateOfBirth, address, zipcode, emailAddress, password, dateJoin)
+                        string address, string zipCode, string emailAddress, string password, DateTime dateJoin)
+            : base(userID, fullName, contactNumber, dateOfBirth, address, zipCode, emailAddress, password, dateJoin)
         {
             ProjectedMonthlyRevenue = 0;
             Vehicles = new List<Vehicle>();
@@ -104,7 +105,7 @@ namespace SWAD_P03_GroupE_Classes
             Console.WriteLine($"Contact Number: {ContactNumber}");
             Console.WriteLine($"Date of Birth: {DateOfBirth.ToShortDateString()}");
             Console.WriteLine($"Address: {Address}");
-            Console.WriteLine($"Zipcode: {Zipcode}");
+            Console.WriteLine($"Zipcode: {ZipCode}");
             Console.WriteLine($"Email Address: {EmailAddress}");
             Console.WriteLine($"Date Joined: {DateJoin.ToShortDateString()}");
             Console.WriteLine($"Projected Monthly Revenue: {ProjectedMonthlyRevenue}");
@@ -120,8 +121,8 @@ namespace SWAD_P03_GroupE_Classes
 
         // Constructor
         public Admin(string userID, string fullName, string contactNumber, DateTime dateOfBirth,
-                     string address, string zipcode, string emailAddress, string password, DateTime dateJoin, string role)
-            : base(userID, fullName, contactNumber, dateOfBirth, address, zipcode, emailAddress, password, dateJoin)
+                     string address, string zipCode, string emailAddress, string password, DateTime dateJoin, string role)
+            : base(userID, fullName, contactNumber, dateOfBirth, address, zipCode, emailAddress, password, dateJoin)
         {
             Role = role;
         }
@@ -135,7 +136,7 @@ namespace SWAD_P03_GroupE_Classes
             Console.WriteLine($"Contact Number: {ContactNumber}");
             Console.WriteLine($"Date of Birth: {DateOfBirth.ToShortDateString()}");
             Console.WriteLine($"Address: {Address}");
-            Console.WriteLine($"Zipcode: {Zipcode}");
+            Console.WriteLine($"Zipcode: {ZipCode}");
             Console.WriteLine($"Email Address: {EmailAddress}");
             Console.WriteLine($"Date Joined: {DateJoin.ToShortDateString()}");
             Console.WriteLine($"Role: {Role}");
@@ -157,10 +158,10 @@ namespace SWAD_P03_GroupE_Classes
 
         // Constructor
         public Renter(string userID, string fullName, string contactNumber, DateTime dateOfBirth,
-                      string address, string zipcode, string emailAddress, string password, DateTime dateJoin,
+                      string address, string zipCode, string emailAddress, string password, DateTime dateJoin,
                       string renterType, string backgroundCheckStatus, string registrationStatus,
                       bool verificationEmailSent, string verificationStatus)
-            : base(userID, fullName, contactNumber, dateOfBirth, address, zipcode, emailAddress, password, dateJoin)
+            : base(userID, fullName, contactNumber, dateOfBirth, address, zipCode, emailAddress, password, dateJoin)
         {
             RenterType = renterType;
             BackgroundCheckStatus = backgroundCheckStatus;
@@ -171,6 +172,7 @@ namespace SWAD_P03_GroupE_Classes
             DriverLicence = null;
         }
 
+        // Function Implemented by Liang Ding Xuan, S10258272, Use Case: Return Vehicle 
         public List<Booking> RetrieveBookings()
         {
             return BookingsList;
@@ -191,7 +193,7 @@ namespace SWAD_P03_GroupE_Classes
             Console.WriteLine($"Contact Number: {ContactNumber}");
             Console.WriteLine($"Date of Birth: {DateOfBirth.ToShortDateString()}");
             Console.WriteLine($"Address: {Address}");
-            Console.WriteLine($"Zipcode: {Zipcode}");
+            Console.WriteLine($"Zipcode: {ZipCode}");
             Console.WriteLine($"Email Address: {EmailAddress}");
             Console.WriteLine($"Date Joined: {DateJoin.ToShortDateString()}");
             Console.WriteLine($"Renter Type: {RenterType}");
@@ -204,7 +206,7 @@ namespace SWAD_P03_GroupE_Classes
 
 
         // Implemented by Ng Kai Huat Jason, S10262552, Use Case : Register as Renter
-        public static Renter CreateRenter(string fullName, string contactNumber, DateTime dateOfBirth, string address, string zipcode, string emailAddress, string password, string renterType)
+        public static Renter CreateRenter(string fullName, string contactNumber, DateTime dateOfBirth, string address, string zipCode, string emailAddress, string password, string renterType)
         {
             return new Renter(
                 Guid.NewGuid().ToString(),
@@ -212,7 +214,7 @@ namespace SWAD_P03_GroupE_Classes
                 contactNumber,
                 dateOfBirth,
                 address,
-                zipcode,
+                zipCode,
                 emailAddress,
                 password,
                 dateJoin: DateTime.Now,
