@@ -8,19 +8,19 @@ namespace SWAD_ReturnVehicle_UseCase
 {
     public class AccidentReport
     {
-        public string reportID { get; set; }
-        public DateTime accidentDateTime { get; set; }
-        public string accidentDesc { get; set; }
-        public string accidentLocation { get; set; }
+        public string ReportID { get; set; }
+        public DateTime AccidentDateTime { get; set; }
+        public string AccidentDesc { get; set; }
+        public string AccidentLocation { get; set; }
 
         public AccidentReport(){}
 
         public AccidentReport(string reportID, DateTime accidentDateTime, string accidentDescription, string accidentLocation)
         {
-            this.reportID = reportID;
-            this.accidentDateTime = accidentDateTime;
-            this.accidentDesc = accidentDescription;
-            this.accidentLocation = accidentLocation;
+            this.ReportID = reportID;
+            this.AccidentDateTime = accidentDateTime;
+            this.AccidentDesc = accidentDescription;
+            this.AccidentLocation = accidentLocation;
         }
 
 
