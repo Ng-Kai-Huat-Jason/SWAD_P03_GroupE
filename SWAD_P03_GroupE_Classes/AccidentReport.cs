@@ -17,10 +17,10 @@ namespace SWAD_ReturnVehicle_UseCase
 
         public AccidentReport(string reportID, DateTime accidentDateTime, string accidentDescription, string accidentLocation)
         {
-            this.ReportID = reportID;
-            this.AccidentDateTime = accidentDateTime;
-            this.AccidentDesc = accidentDescription;
-            this.AccidentLocation = accidentLocation;
+            ReportID = reportID;
+            AccidentDateTime = accidentDateTime;
+            AccidentDesc = accidentDescription;
+            AccidentLocation = accidentLocation;
         }
 
 
