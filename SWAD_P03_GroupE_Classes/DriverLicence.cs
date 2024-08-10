@@ -28,7 +28,7 @@ namespace SWAD_P03_GroupE_Classes
         }
 
         // Implemented by Ng Kai Huat Jason, S10262552, Use Case : Register as Renter
-        public DriverLicence createLicence(List<Renter> renters)
+        public DriverLicence CreateLicence(List<Renter> renters)
         {
             static string ReadNonEmptyString(string prompt)
             {
